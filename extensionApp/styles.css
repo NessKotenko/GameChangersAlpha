@@ -1,0 +1,84 @@
+/* Specific Aesthetic Container Blurring for Checking Phase */
+.ai-blurred-container [id^="message-content-"],
+.ai-blurred-container img,
+.ai-blurred-container [class*="embedWrapper_"],
+.ai-blurred-container [class*="attachment_"] {
+  filter: blur(10px) !important;
+  pointer-events: none !important;
+  user-select: none !important;
+  opacity: 0.8 !important;
+  transition: filter 0.3s ease, opacity 0.3s ease;
+}
+
+/* 🚨 IRONCLAD PERMANENT BLUR - Discord cannot bypass this 🚨 */
+body.ai-chat-blocked main [data-list-id="chat-messages"] {
+  filter: blur(12px) !important;
+  pointer-events: none !important;
+  user-select: none !important;
+  opacity: 0.6 !important;
+}
+
+.ai-blurred-container {
+  pointer-events: none !important; 
+}
+
+/* Beautiful Centered Overlay */
+.ai-center-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  
+  background: rgba(43, 45, 49, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+  
+  border-radius: 16px;
+  padding: 35px 45px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  min-width: 320px;
+  max-width: 80%;
+  pointer-events: auto !important; 
+}
+
+.ai-overlay-text {
+  color: #f2f3f5;
+  font-size: 20px;
+  font-weight: 600;
+  font-family: 'gg sans', 'Noto Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+}
+
+/* Safe Chat Top Banner */
+.ai-top-safe-banner {
+  background-color: rgba(59, 165, 92, 0.9);
+  color: white;
+  padding: 8px 16px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 14px;
+  border-radius: 6px;
+  margin: 10px 16px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+  position: relative;
+  font-family: 'gg sans', 'Noto Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+/* Links */
+.ai-dangerous-link {
+  filter: blur(4px) !important;
+  pointer-events: none !important;
+  text-decoration: none !important;
+  color: #72767d !important;
+}

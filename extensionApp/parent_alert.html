@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CommHIT - Parent Alert</title>
+    <link rel="stylesheet" href="parent_alert.css" />
+  </head>
+  <body>
+    <div id="incidentToast" class="toast" role="alert" aria-live="assertive">
+      <strong>New Incident:</strong> A suspicious chat was detected and reported to parents.
+    </div>
+
+    <header class="top-bar">
+      <div class="top-bar-title">
+        <h1>Parent Alert Dashboard</h1>
+        <p>Suspicious activity alert on Discord</p>
+      </div>
+      <div id="alertStatusBadge" class="status-badge destructive">High Risk</div>
+    </header>
+
+    <main class="layout">
+      <section class="card alert-card">
+        <h2>Illegitimate Chat Detected</h2>
+        <p class="text-muted alert-text">
+          Our system detected that your child joined a chat classified as dangerous. We recommend verifying immediately to secure their account.
+        </p>
+
+        <div class="incident-types" id="categorySelectionBlock">
+          <span class="pill outline">Harassment</span>
+          <span class="pill outline">Pedophilia</span>
+          <span class="pill outline">Physical Extortion</span>
+          <span class="pill outline">Verbal Abuse</span>
+          <span class="pill outline">Racism / Antisemitism</span>
+        </div>
+
+        <div id="parentAlertText" class="alert-box destructive">
+          Your child is experiencing an incident in an unverified chat.
+        </div>
+
+        <div class="meta-grid">
+          <div class="meta-item">
+            <span class="meta-label">Suspect (Discord)</span>
+            <strong id="attackerName">--</strong>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Time Detected</span>
+            <strong id="detectedAt">--:--</strong>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Platform</span>
+            <strong>Discord</strong>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">AI Reasoning</span>
+            <strong id="aiReasonText">--</strong>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Current Classification</span>
+            <strong id="currentIncidentType">Harassment</strong>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Risk Score</span>
+            <strong id="riskScore">92/100</strong>
+          </div>
+        </div>
+
+        <div class="actions">
+          <button id="ackBtn" class="btn primary">Mark as Read &amp; Handled</button>
+          <button id="helpBtn" class="btn outline">Parent Guidelines</button>
+        </div>
+
+        <section class="chat-section">
+          <div class="chat-header">
+            <h3>Incident Chat Log</h3>
+            <small class="text-muted">Real-time log of the conversation that triggered the block</small>
+          </div>
+          <div id="chatContainer" class="chat-container">
+            <!-- Dynamic content -->
+          </div>
+        </section>
+      </section>
+
+      <aside class="card side-card">
+        <h3>What to do next?</h3>
+        <ol class="steps text-muted">
+          <li>Contact your child and verify who they are talking to.</li>
+          <li>Ask the child to leave the conversation until verified.</li>
+          <li>Review privacy settings and permissions on Discord.</li>
+          <li>In an emergency, contact professional authorities immediately.</li>
+        </ol>
+        <hr class="divider"/>
+        <p class="small-note text-muted">
+          This event was logged locally and automatically paused for safety by the Discord Protector.
+        </p>
+        <p id="actionFeedback" class="feedback"></p>
+      </aside>
+    </main>
+
+    <script src="parent_alert.js"></script>
+  </body>
+</html>

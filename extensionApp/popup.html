@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; padding: 20px; width: 250px; background: #2b2d31; color: white; margin: 0; }
+    h2 { font-size: 16px; margin-top: 0; color: #5865F2; }
+    p { font-size: 12px; color: #dbdee1; line-height: 1.4; margin-bottom: 15px; }
+    input { width: 100%; padding: 10px; margin-bottom: 15px; border-radius: 4px; border: 1px solid #1e1f22; background: #1e1f22; color: white; box-sizing: border-box; outline: none; }
+    input:focus { border-color: #5865F2; }
+    button { width: 100%; padding: 10px; background: #3ba55c; color: white; border: none; border-radius: 4px; cursor: pointer; font-weight: bold; transition: background 0.2s; }
+    button:hover { background: #2d8046; }
+    #status { margin-top: 15px; font-size: 13px; font-weight: bold; text-align: center; height: 15px; }
+  </style>
+</head>
+<body>
+  <h2>CommHIT Setup</h2>
+  <p>Enter the <strong>Kid Connection Code</strong> generated from your Parent Dashboard.</p>
+  <input type="text" id="kidCode" placeholder="e.g. kid-a1b2c3" />
+  <button id="saveBtn">Link Device</button>
+  <div id="status"></div>
+  <script src="popup.js"></script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "CommHIT AI Protector",
+  "version": "1.1",
+  "description": "Protects against malicious links, grooming, and phishing on Discord Web using AI.",
+  "permissions": ["storage", "scripting"],
+  "host_permissions": [
+    "*://generativelanguage.googleapis.com/*",
+    "*://firestore.googleapis.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://discord.com/*", "*://*.discord.com/*"],
+      "js": ["content.js"],
+      "css": ["styles.css"],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": ["<all_urls>"],
+      "js": ["blocker.js"],
+      "run_at": "document_start"
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  }
+}
